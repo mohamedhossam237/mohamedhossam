@@ -57,7 +57,7 @@ export default function Home() {
       <CardContent>
         <Box display="flex" alignItems="center">
           {icon}
-          <Typography variant="h5" component="div" gutterBottom>
+          <Typography variant="h5"component="div" gutterBottom >
             {title}
           </Typography>
         </Box>
@@ -223,6 +223,7 @@ export default function Home() {
             <Typography
               variant="h2"
               component={motion.div}
+              sx={{ color: 'white' }}
               gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}
@@ -233,6 +234,7 @@ export default function Home() {
             <Typography
               variant="h4"
               component={motion.div}
+              sx={{ color: 'white' }}
               gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}
@@ -243,6 +245,7 @@ export default function Home() {
             <Typography
               variant="h6"
               component={motion.div}
+              sx={{ color: 'white' }}
               gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}

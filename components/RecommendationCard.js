@@ -79,7 +79,7 @@ function RecommendationCard({ recommendation }) {
 export default function RecommendationsList() {
   return (
     <Box sx={{ marginTop: '2rem', width: '100%' }}>
-      <Typography variant="h4" component="div" gutterBottom>
+      <Typography variant="h4" sx={{ color: 'white' }} component="div" gutterBottom>
         Recommendations
       </Typography>
       <Slider {...sliderSettings}>

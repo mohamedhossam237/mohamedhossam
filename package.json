@@ -19,8 +19,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-particles": "^2.10.1",
+    "react-slick": "^0.29.0",
     "react-tsparticles": "^2.10.1",
     "react-typed": "^1.2.0",
-    "react-typist": "^2.0.5"
+    "react-typist": "^2.0.5",
+    "slick-carousel": "^1.8.1"
   }
 }

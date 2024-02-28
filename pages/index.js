@@ -1,30 +1,40 @@
-import { Box, Typography, Grid, AppBar, Toolbar, Button, IconButton, Menu, MenuItem, CssBaseline, Zoom, Card, CardContent } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Grid,
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  CssBaseline,
+  Zoom,
+  Card,
+  CardContent,
+} from '@mui/material';
 import { motion } from 'framer-motion';
-import MenuIcon from '@mui/icons-material/Menu';
-import WebIcon from '@mui/icons-material/Web';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import PhoneIcon from '@mui/icons-material/Phone';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import ArticleIcon from '@mui/icons-material/Article';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import StarIcon from '@mui/icons-material/Star';
-import WorkIcon from '@mui/icons-material/Work';
-import CodeIcon from '@mui/icons-material/Code';
-import { Code as CodingIcon, Palette as PaletteIcon } from '@mui/icons-material';
+import ExperienceList from '../components/ExperienceCard';
+import RecommendationCard from '../components/RecommendationCard';
+import ProjectCard from '../components/ProjectCard';
 import React, { useState, useEffect } from 'react';
-import Particles from 'react-particles';
+import { Particles } from 'react-tsparticles';
+import Link from 'next/link';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import NavBar from '../components/NavBar';
+import RecommendationsList from '../components/RecommendationCard'
 
 export default function Home() {
-  const linkedInURL = "https://www.linkedin.com/in/yourProfile";
-  const githubURL = "https://github.com/yourProfile";
-  const instagramURL = "https://www.instagram.com/yourProfile";
-  
-  const imageUrls = [
-    "https://i.ibb.co/Gpds9NL/Whats-App-Image-2023-06-12-at-7-28-29-PM-removebg-preview.png",
-  ];
+  const linkedInURL = 'https://www.linkedin.com/in/mohamed-hossam-427b63187/';
+  const githubURL = 'https://github.com/mohamed-ma1703976';
+  const instagramURL = 'https://www.instagram.com/mhos237';
+
+  const imageUrls = ['https://i.ibb.co/Gpds9NL/Whats-App-Image-2023-06-12-at-7-28-29-PM-removebg-preview.png'];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -38,20 +48,22 @@ export default function Home() {
   const imageUrl = imageUrls[currentImageIndex];
 
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = ["Web Developer", "Graphic Designer", "Video Editor", "Mobile Developer"];
-  
-  const experiences = ["Experience 1", "Experience 2", "Experience 3"];
-  const recommendations = ["Recommendation 1", "Recommendation 2", "Recommendation 3"];
-  const projects = ["Project 1", "Project 2", "Project 3"];
+  const roles = ['Web Developer', 'Graphic Designer', 'Video Editor', 'Mobile Developer'];
+
+  const projects = ['Project 1', 'Project 2', 'Project 3'];
 
   const InfoCard = ({ icon, title, description }) => (
     <Card sx={{ maxWidth: 345, margin: '1rem' }}>
       <CardContent>
         <Box display="flex" alignItems="center">
           {icon}
-          <Typography variant="h5" component="div" gutterBottom>{title}</Typography>
+          <Typography variant="h5" component="div" gutterBottom>
+            {title}
+          </Typography>
         </Box>
-        <Typography variant="body2" color="text.secondary">{description}</Typography>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
       </CardContent>
     </Card>
   );
@@ -59,9 +71,9 @@ export default function Home() {
   const [anchorEl, setAnchorEl] = useState(null);
   const pages = [
     { name: 'Web Development', url: '/WebDevelopmentPage' },
-    { name: 'Graphic Design', url: '/graphic-design' },
-    { name: 'Video Editing', url: '/video-editing' },
-    { name: 'Mobile Development', url: '/mobile-development' },
+    { name: 'Graphic Design', url: '/graphicDesign' },
+    { name: 'Video Editing', url: '/videoEditing' },
+    { name: 'Mobile Development', url: '/mobileDevelopment' },
     { name: 'Blogs', url: '/blogs' },
     { name: 'Contact Me', url: '/contact' },
   ];
@@ -71,11 +83,12 @@ export default function Home() {
     setMenuOpen(true);
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleMenuClose = () => {
     setMenuOpen(false);
     setAnchorEl(null);
   };
+
 
   return (
     <Box
@@ -161,71 +174,21 @@ export default function Home() {
           zIndex: -1,
         }}
       />
-
-      <AppBar position="fixed" color="transparent" sx={{ backdropFilter: 'blur(10px)', backgroundColor: '#00000050' }}>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h6" component="div" sx={{ display: { xs: 'block', md: 'none' } }}>
-            Mohamed Hossam
-          </Typography>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleMenuOpen}
-            sx={{ display: { xs: 'block', md: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button key={page.name} color="inherit" startIcon={<WebIcon />}>
-                {page.name}
-              </Button>
-            ))}
-          </Box>
-          <Menu
-            id="menu"
-            anchorEl={anchorEl}
-            open={menuOpen}
-            onClose={handleMenuClose}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-          >
-            {pages.map((page) => (
-              <MenuItem
-                key={page.name}
-                onClick={handleMenuClose}
-                component="a"
-                href={page.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {page.name}
-              </MenuItem>
-            ))}
-          </Menu>
-        </Toolbar>
-      </AppBar>
+ <NavBar />
 
       <Grid container spacing={4} sx={{ padding: '2rem', marginTop: '5rem' }}>
         <Grid item xs={12} sm={6}>
           <Zoom in={true} style={{ transitionDelay: '500ms' }}>
-            <img 
-              src={imageUrl} 
-              alt="Mohamed Hossam" 
+            <img
+              src={imageUrl}
+              alt="Mohamed Hossam"
               style={{
                 borderRadius: '15%',
                 maxWidth: '100%',
                 height: 'auto',
                 boxShadow: '0px 10px 30px 0px rgba(0, 0, 0, 0.1)',
                 border: '8px solid white',
-              }} 
+              }}
             />
           </Zoom>
         </Grid>
@@ -242,82 +205,63 @@ export default function Home() {
               initial={{ scale: 0 }}
               animate={{ rotate: 360, scale: 1 }}
               transition={{
-                type: "spring",
+                type: 'spring',
                 stiffness: 260,
-                damping: 20
+                damping: 20,
               }}
             >
-              <a href={linkedInURL} target="_blank" rel="noreferrer">
+              <Link href={linkedInURL} target="_blank" rel="noreferrer">
                 <LinkedInIcon sx={{ fontSize: 40, color: '#fff' }} />
-              </a>
-              <a href={githubURL} target="_blank" rel="noreferrer">
+              </Link>
+              <Link href={githubURL} target="_blank" rel="noreferrer">
                 <GitHubIcon sx={{ fontSize: 40, color: '#fff', marginLeft: '1rem' }} />
-              </a>
-              <a href={instagramURL} target="_blank" rel="noreferrer">
+              </Link>
+              <Link href={instagramURL} target="_blank" rel="noreferrer">
                 <InstagramIcon sx={{ fontSize: 40, color: '#fff', marginLeft: '1rem' }} />
-              </a>
+              </Link>
             </Box>
-            <Typography variant="h2" component={motion.div} gutterBottom
+            <Typography
+              variant="h2"
+              component={motion.div}
+              gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}
               transition={{ duration: 1 }}
             >
               Mohamed Hossam
             </Typography>
-            <Typography variant="h4" component={motion.div} gutterBottom
+            <Typography
+              variant="h4"
+              component={motion.div}
+              gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-              <i>Software Engineer</i> & <i>Creative Designer</i>
+              <i>Software Engineer</i> & <i>Developer</i>
             </Typography>
-            <Typography variant="h6" component={motion.div} gutterBottom
+            <Typography
+              variant="h6"
+              component={motion.div}
+              gutterBottom
               initial={{ y: '100%', opacity: 0 }}
               animate={{ y: '0%', opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-              Specializing in React.js and Mobile App Development. Passionate about user-friendly design and always aiming for perfection.
+           I blend programming expertise (Python, Java, JavaScript, Flutter, C++), data engineering skills, and design acumen (Adobe Photoshop, Figma, Visual Paradigm) with strong problem-solving and communication abilities. Passionate about using technology to make a meaningful impact, I'm dedicated to innovation and positive change
             </Typography>
-            <Button variant="contained" color="primary" sx={{ marginTop: '2rem' }}>View My Resume</Button>
+            <Button variant="contained" color="primary" sx={{ marginTop: '2rem' }}>
+              View My Resume
+            </Button>
           </Box>
         </Grid>
       </Grid>
 
-      {/* Experience section */}
-      <Box sx={{ marginTop: '2rem', width: '100%' }}>
-        <Typography variant="h4" component="div" gutterBottom>
-          Experience
-        </Typography>
-        <Grid container justifyContent="center">
-          {experiences.map((experience, index) => (
-            <InfoCard key={index} icon={<WorkIcon />} title={`Experience ${index + 1}`} description={experience} />
-          ))}
-        </Grid>
-      </Box>
 
-      {/* Recommendations section */}
-      <Box sx={{ marginTop: '2rem', width: '100%' }}>
-        <Typography variant="h4" component="div" gutterBottom>
-          Recommendations
-        </Typography>
-        <Grid container justifyContent="center">
-          {recommendations.map((recommendation, index) => (
-            <InfoCard key={index} icon={<StarIcon />} title={`Recommendation ${index + 1}`} description={recommendation} />
-          ))}
-        </Grid>
-      </Box>
+      <ExperienceList />
 
-      {/* Latest Projects section */}
-      <Box sx={{ marginTop: '2rem', width: '100%' }}>
-        <Typography variant="h4" component="div" gutterBottom>
-          Latest Projects
-        </Typography>
-        <Grid container justifyContent="center">
-          {projects.map((project, index) => (
-            <InfoCard key={index} icon={<CodeIcon />} title={`Project ${index + 1}`} description={project} />
-          ))}
-        </Grid>
-      </Box>
+    <RecommendationsList />
+
 
       <Box sx={{ marginTop: 'auto', padding: '1rem', backgroundColor: '#00000050', textAlign: 'center' }}>
         <Typography variant="body2">© 2023 - Mohamed Hossam - All Rights Reserved</Typography>

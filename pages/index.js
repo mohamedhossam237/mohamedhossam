@@ -2,28 +2,21 @@ import {
   Box,
   Typography,
   Grid,
-  AppBar,
-  Toolbar,
   Button,
-  IconButton,
-  Menu,
-  MenuItem,
   CssBaseline,
   Zoom,
   Card,
   CardContent,
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ExperienceList from '../components/ExperienceCard';
-import RecommendationCard from '../components/RecommendationCard';
-import ProjectCard from '../components/ProjectCard';
 import React, { useState, useEffect } from 'react';
 import { Particles } from 'react-tsparticles';
 import Link from 'next/link';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import NavBar from '../components/NavBar';
@@ -90,6 +83,10 @@ export default function Home() {
 
 
   return (
+    <> <Head>
+    <title>Mohamed Hossam</title>
+    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
+  </Head>
     <Box
       component={motion.div}
       initial={{ opacity: 0 }}
@@ -269,5 +266,6 @@ export default function Home() {
         <Typography variant="body2" sx={{ color: 'white' }}>© 2023 - Mohamed Hossam - All Rights Reserved</Typography>
       </Box>
     </Box>
+    </>
   );
 }

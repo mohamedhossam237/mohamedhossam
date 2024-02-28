@@ -1,27 +1,43 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
 
-// Replace the projectData array with your own project data
 const projectData = [
   {
-    title: 'Project 1',
-    description: 'Description of Project 1',
-    image: 'https://example.com/project1-image.jpg',
+    title: 'EduShare',
+    description: 'A web platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
+    image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', 
+    link: 'https://edu-share.vercel.app' 
   },
   {
-    title: 'Project 2',
+    title: 'FoodieHub',
+    description: 'FoodieHub offers personalized food experiences, featuring recipe discovery based on user preferences, ingredient management, and a vibrant food community. It tackles food waste and caters to dietary needs, providing a unique interactive cooking experience.',
+    image: 'https://i.ibb.co/2cn5dCk/unnamed.png',
+    link: 'https://foodie-hub-ebon.vercel.app/' 
+
+  },
+  {
+    title: 'Masar',
     description: 'Description of Project 2',
-    image: 'https://example.com/project2-image.jpg',
+    image: 'https://i.ibb.co/TY6BDTB/Masar.png',
+    link: 'https://masar.vercel.app/' 
+
   },
   {
-    title: 'Project 3',
+    title: 'Monqz',
     description: 'Description of Project 3',
-    image: 'https://example.com/project3-image.jpg',
+    image: 'https://i.ibb.co/dryWTdp/logo-1.png',
+    link: 'https://monqz-api.vercel.app/' 
+  },
+  {
+    title: 'Astrocon',
+    description: 'AstroCon is a conference dedicated to astronomy and space science, organized by the Astronomy Alumni Chapter at Qatar University (QU) in cooperation with QU Astronomy Club. ',
+    image: 'https://i.ibb.co/kD3C6qB/unnamed-1.jpg',
+    link: 'https://quastrocon.wordpress.com/' 
+
   },
 ];
-
 const WebDevelopmentPage = () => {
   return (
     <Box
@@ -56,15 +72,24 @@ const WebDevelopmentPage = () => {
                 margin: '1rem',
               }}
             >
+              <CardMedia
+                component="img"
+                height="140"
+                image={project.image}
+                alt={project.title}
+              />
               <CardContent>
-                <Box display="flex" alignItems="center">
+                <Box display="flex" alignItems="center" flexDirection="column">
                   <Typography variant="h5" component="div" gutterBottom>
                     {project.title}
                   </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.description}
+                  </Typography>
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>View Project</a>
+                  )}
                 </Box>
-                <Typography variant="body2" color="text.secondary">
-                  {project.description}
-                </Typography>
               </CardContent>
             </Card>
           </Grid>

@@ -24,12 +24,18 @@ const NavBar = () => {
     { name: 'Contact', url: '/contact' },
   ];
 
+  // Assuming the logo image is located in your public folder or accessible via URL
+  const logoUrl = "https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png"; // Change this to your actual logo path
+
   return (
     <AppBar position="fixed" color="transparent" sx={{ backdropFilter: 'blur(10px)', backgroundColor: '#00000050' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="h6" component="div"  sx={{ flexGrow: 1, color: 'white' }}>
-          Mohamed Hossam
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+          <img src={logoUrl} alt="Logo" style={{ height: '70px', marginRight: '10px' }} />
+          <Typography variant="h6" component="div" sx={{ color: 'white' }}>
+            Mohamed Hossam
+          </Typography>
+        </Box>
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
             <Link key={page.name} href={page.url} passHref>

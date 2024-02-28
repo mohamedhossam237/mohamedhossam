@@ -266,7 +266,7 @@ export default function Home() {
 
 
       <Box sx={{ marginTop: 'auto', padding: '1rem', backgroundColor: '#00000050', textAlign: 'center' }}>
-        <Typography variant="body2">© 2023 - Mohamed Hossam - All Rights Reserved</Typography>
+        <Typography variant="body2" sx={{ color: 'white' }}>© 2023 - Mohamed Hossam - All Rights Reserved</Typography>
       </Box>
     </Box>
   );

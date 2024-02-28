@@ -50,14 +50,13 @@ export default function Home() {
   const [currentRole, setCurrentRole] = useState(0);
   const roles = ['Web Developer', 'Graphic Designer', 'Video Editor', 'Mobile Developer'];
 
-  const projects = ['Project 1', 'Project 2', 'Project 3'];
 
   const InfoCard = ({ icon, title, description }) => (
     <Card sx={{ maxWidth: 345, margin: '1rem' }}>
       <CardContent>
         <Box display="flex" alignItems="center">
           {icon}
-          <Typography variant="h5"component="div" gutterBottom >
+          <Typography variant="h5" sx={{ color: 'white' }} component="div" gutterBottom >
             {title}
           </Typography>
         </Box>

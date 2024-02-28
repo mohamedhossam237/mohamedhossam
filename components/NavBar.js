@@ -27,7 +27,7 @@ const NavBar = () => {
   return (
     <AppBar position="fixed" color="transparent" sx={{ backdropFilter: 'blur(10px)', backgroundColor: '#00000050' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div"  sx={{ flexGrow: 1, color: 'white' }}>
           Mohamed Hossam
         </Typography>
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

@@ -1,12 +1,125 @@
 import React from 'react';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, CardActionArea } from '@mui/material';
 import NavBar from '../components/NavBar';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
 
+const projectData = [
+  {
+    title: 'Dlni',
+    description: 'FoodieHub offers personalized food experiences, featuring recipe discovery based on user preferences, ingredient management, and a vibrant food community. It tackles food waste and caters to dietary needs, providing a unique interactive cooking experience.',
+    image: 'https://i.ibb.co/V396Gc1/LogoD.png',
+    link: 'https://foodie-hub-ebon.vercel.app/' 
+
+  },
+  {
+    title: 'Rayig',
+    description: 'AstroCon is a conference dedicated to astronomy and space science, organized by the Astronomy Alumni Chapter at Qatar University (QU) in cooperation with QU Astronomy Club. ',
+    image: 'https://i.ibb.co/KKwqSSW/Black-Yellow-Minimalist-Brain-Logo.png',
+    link: 'https://quastrocon.wordpress.com/' 
+
+  },
+  {
+    title: 'EduShare',
+    description: 'A web platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
+    image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', 
+    link: 'https://edu-share.vercel.app' 
+  },
+  {
+    title: 'Masar',
+    description: 'Description of Project 2',
+    image: 'https://i.ibb.co/TY6BDTB/Masar.png',
+    link: 'https://masar.vercel.app/' 
+
+  },
+  {
+    title: 'Monqz',
+    description: 'Description of Project 3',
+    image: 'https://i.ibb.co/dryWTdp/logo-1.png',
+    link: 'https://monqz-api.vercel.app/' 
+  },
+  {
+    title: 'Busalert',
+    description: 'AstroCon is a conference dedicated to astronomy and space science, organized by the Astronomy Alumni Chapter at Qatar University (QU) in cooperation with QU Astronomy Club. ',
+    image: 'https://i.ibb.co/9ZH2jwj/Untitled-design-13.png',
+    link: 'https://quastrocon.wordpress.com/' 
+
+  },
+  {
+    title: 'Organizer',
+    description: 'AstroCon is a conference dedicated to astronomy and space science, organized by the Astronomy Alumni Chapter at Qatar University (QU) in cooperation with QU Astronomy Club. ',
+    image: 'https://i.ibb.co/gvNnFdD/Untitled-design-14.png',
+    link: 'https://quastrocon.wordpress.com/' 
+
+  },
+  {
+    title: 'Eye Manager',
+    description: 'AstroCon is a conference dedicated to astronomy and space science, organized by the Astronomy Alumni Chapter at Qatar University (QU) in cooperation with QU Astronomy Club. ',
+    image: 'https://i.ibb.co/RHsLg5k/Untitled-design-15.png',
+    link: 'https://quastrocon.wordpress.com/' 
+
+  },
+];
 const MobileDevelopmentPage = () => {
   return (
-    <div>
+    <> <Head>
+    <title> Mobile Development Projects</title>
+    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
+  </Head>
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        fontFamily: 'Roboto, sans-serif',
+        padding: '100px',
+      }}
+    >
       <NavBar />
-      <h1>Mobile Development Projects</h1>
-    </div>
+
+      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+        {projectData.map((project, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+            <Card 
+              sx={{ 
+                width: 345, // Set a fixed width
+                height: 450, // Set a fixed height to make all cards the same
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between', 
+                margin: 'auto' // Center the card in the grid cell
+              }}
+            >
+              <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
+                <CardMedia
+                  component="img"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{ height: 194, objectFit: 'cover' }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
+                    {project.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+    </>
   );
 };
 

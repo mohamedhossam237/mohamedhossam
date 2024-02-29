@@ -5,7 +5,9 @@ const BlogsPage = () => {
   return (
     <div>
       <NavBar />
-      <h1>Blogs</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <h1>Coming Soon</h1>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, CardActionArea } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const projectData = [
   {
@@ -40,6 +41,10 @@ const projectData = [
 ];
 const WebDevelopmentPage = () => {
   return (
+    <> <Head>
+    <title> Web Development Projects</title>
+    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
+  </Head>
     <Box
       component={motion.div}
       initial={{ opacity: 0 }}
@@ -54,48 +59,46 @@ const WebDevelopmentPage = () => {
         justifyContent: 'center',
         textAlign: 'center',
         fontFamily: 'Roboto, sans-serif',
-        padding: '2rem',
+        padding: '100px',
       }}
     >
       <NavBar />
 
-      <Typography variant="h4" component="div" gutterBottom>
-        Web Development Projects
-      </Typography>
-
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
         {projectData.map((project, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4}>
-            <Card
-              sx={{
-                maxWidth: 345,
-                margin: '1rem',
+          <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+            <Card 
+              sx={{ 
+                width: 345, // Set a fixed width
+                height: 450, // Set a fixed height to make all cards the same
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'space-between', 
+                margin: 'auto' // Center the card in the grid cell
               }}
             >
-              <CardMedia
-                component="img"
-                height="140"
-                image={project.image}
-                alt={project.title}
-              />
-              <CardContent>
-                <Box display="flex" alignItems="center" flexDirection="column">
-                  <Typography variant="h5" component="div" gutterBottom>
+              <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
+                <CardMedia
+                  component="img"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{ height: 194, objectFit: 'cover' }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
                     {project.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {project.description}
                   </Typography>
-                  {project.link && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>View Project</a>
-                  )}
-                </Box>
-              </CardContent>
+                </CardContent>
+              </CardActionArea>
             </Card>
           </Grid>
         ))}
       </Grid>
     </Box>
+    </>
   );
 };
 

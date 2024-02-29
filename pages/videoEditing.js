@@ -5,7 +5,9 @@ const VideoEditingPage = () => {
   return (
     <div>
       <NavBar />
-      <h1>Video Editing Projects</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <h1>Coming Soon</h1>
+      </div>
     </div>
   );
 };

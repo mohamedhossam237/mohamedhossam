@@ -239,7 +239,7 @@ export default function Home() {
               <i>Software Engineer</i> & <i>Developer</i>
             </Typography>
             <Typography
-              variant="h6"
+              variant="h7"
               component={motion.div}
               sx={{ color: 'white' }}
               gutterBottom
@@ -247,8 +247,7 @@ export default function Home() {
               animate={{ y: '0%', opacity: 1 }}
               transition={{ duration: 1.5 }}
             >
-           I blend programming expertise (Python, Java, JavaScript, Flutter, C++), data engineering skills, and design acumen (Adobe Photoshop, Figma, Visual Paradigm) with strong problem-solving and communication abilities. Passionate about using technology to make a meaningful impact, I'm dedicated to innovation and positive change
-            </Typography>
+As a technologist with a broad skill set, I excel in programming, data engineering, and design. My passion for innovation and making a meaningful impact drives me to solve complex challenges with creative and effective solutions.            </Typography>
             <Button variant="contained" color="primary" sx={{ marginTop: '2rem' }}>
               View My Resume
             </Button>

@@ -53,7 +53,8 @@ const experiences = [
     company: 'College of Business & Economics- Qatar University',
     duration: 'Sep 2022 - Feb 2023 · 6 mos',
     location: 'Doha,Qatar',
-    Skills: 'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Microsoft Excel · Adobe Premiere Pro · Marketing Management · Adobe Photoshop · Python (Programming Language)',
+    Skills: 
+        'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Microsoft Excel · Adobe Premiere Pro · Marketing Management · Adobe Photoshop · Python (Programming Language)',
     logo: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg',
   },
   {

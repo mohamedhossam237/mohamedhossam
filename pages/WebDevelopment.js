@@ -7,7 +7,7 @@ import Head from 'next/head';
 const projectData = [
   {
     title: 'EduShare',
-    description: 'A web platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
+    description: 'A web & mobile platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
     image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', 
     link: 'https://edu-share.vercel.app' 
   },
@@ -20,14 +20,14 @@ const projectData = [
   },
   {
     title: 'Masar',
-    description: 'Description of Project 2',
+    description: 'Masar is a cutting-edge application designed to revolutionize the way we monitor road conditions and interact with traffic authorities. it serves as a critical bridge between the community and traffic police, enabling users to report road emergencies, accidents, and hazardous conditions in real-time.',
     image: 'https://i.ibb.co/TY6BDTB/Masar.png',
     link: 'https://masar.vercel.app/' 
 
   },
   {
     title: 'Monqz',
-    description: 'Description of Project 3',
+    description: 'Monqz is an app designed for swimmers and sailors, offering real-time sea conditions, weather forecasts, and safety information. It highlights swimmable areas and warns of potential dangers, making it essential for safe and informed marine activities.',
     image: 'https://i.ibb.co/dryWTdp/logo-1.png',
     link: 'https://monqz-api.vercel.app/' 
   },

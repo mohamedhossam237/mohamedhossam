@@ -17,9 +17,10 @@ const NavBar = () => {
   const pages = [
     { name: 'Home', url: '/' },
     { name: 'Web Development', url: '/WebDevelopment' },
+    { name: 'Mobile Development', url: '/mobileDevelopment' },
+    { name: 'Machine Learning', url: '/machinelearning' },
     { name: 'Graphic Design', url: '/graphicDesign' },
     { name: 'Video Editing', url: '/videoEditing' },
-    { name: 'Mobile Development', url: '/mobileDevelopment' },
     { name: 'Blogs', url: '/blogs' },
     { name: 'Contact', url: '/contact' },
   ];

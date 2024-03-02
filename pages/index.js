@@ -217,40 +217,67 @@ export default function Home() {
               </Link>
             </Box>
             <Typography
-              variant="h2"
-              component={motion.div}
-              sx={{ color: 'white' }}
-              gutterBottom
-              initial={{ y: '100%', opacity: 0 }}
-              animate={{ y: '0%', opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              Mohamed Hossam
-            </Typography>
+  variant="h2"
+  component={motion.div}
+  sx={{ color: 'white', fontFamily: 'Orbitron, sans-serif' }} // Apply Orbitron font here
+  gutterBottom
+  initial={{ y: '100%', opacity: 0 }}
+  animate={{ y: '0%', opacity: 1 }}
+  transition={{ duration: 1 }}
+>
+  Mohamed Hossam
+</Typography>
+<Typography
+  variant="h4"
+  component={motion.div}
+  sx={{ color: 'white', fontFamily: 'Monoton, cursive' }} // Apply Monoton font here for a crazy look
+  gutterBottom
+  initial={{ y: '100%', opacity: 0 }}
+  animate={{ y: '0%', opacity: 1 }}
+  transition={{ duration: 1.5 }}
+>
+  <i>Software Engineer</i> & <i>Developer</i>
+</Typography>
+
             <Typography
-              variant="h4"
-              component={motion.div}
-              sx={{ color: 'white' }}
-              gutterBottom
-              initial={{ y: '100%', opacity: 0 }}
-              animate={{ y: '0%', opacity: 1 }}
-              transition={{ duration: 1.5 }}
-            >
-              <i>Software Engineer</i> & <i>Developer</i>
-            </Typography>
-            <Typography
-              variant="h7"
-              component={motion.div}
-              sx={{ color: 'white' }}
-              gutterBottom
-              initial={{ y: '100%', opacity: 0 }}
-              animate={{ y: '0%', opacity: 1 }}
-              transition={{ duration: 1.5 }}
-            >
-As a technologist with a broad skill set, I excel in programming, data engineering, and design. My passion for innovation and making a meaningful impact drives me to solve complex challenges with creative and effective solutions.            </Typography>
-            <Button variant="contained" color="primary" sx={{ marginTop: '2rem' }}>
-              View My Resume
-            </Button>
+  variant="h7"
+  component={motion.div}
+  sx={{color: 'white', fontFamily: 'Monoton, cursive' }}
+  gutterBottom
+  initial={{ y: '100%', opacity: 0 }}
+  animate={{ y: '0%', opacity: 1 }}
+  transition={{ duration: 1.5 }}
+>
+As a technologist with a broad skill set, I excel in programming, data engineering, and design. My passion for innovation and making a meaningful impact drives me to solve complex challenges with creative and effective solutions.
+</Typography>
+{/* Updated Button with an anchor tag */}
+<motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.2 }}
+  >
+    <Button
+      component="a"
+      href="https://drive.google.com/file/d/1IFMK7TmraRViH7QDBGOC-iBiZMAo0CxK/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="contained"
+      color="primary"
+      sx={{
+        marginTop: '2rem',
+        backgroundColor: '#1976d2', // Customize the button color here
+        '&:hover': {
+          backgroundColor: '#115293', // Customize the hover color here
+        },
+        padding: '10px 20px',
+        borderRadius: '20px',
+        boxShadow: '0px 5px 15px rgba(25, 118, 210, 0.4)',
+        textTransform: 'none', // Removes uppercase text transform
+      }}
+    >
+      View My Resume
+    </Button>
+  </motion.div>
           </Box>
         </Grid>
       </Grid>

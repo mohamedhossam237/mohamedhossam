@@ -1,8 +1,11 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardMedia, CardActionArea } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, IconButton } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'; // Icon for APK download
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary'; // Icon for gallery
 
 const projectData = [
   {
@@ -60,45 +63,45 @@ const projectData = [
 
   },
 ];
+
 const MobileDevelopmentPage = () => {
   return (
-    <> <Head>
-    <title> Mobile Development Projects</title>
-    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
-  </Head>
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      sx={{
-        minHeight: '100vh',
-        background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '100px',
-      }}
-    >
-      <NavBar />
-
-      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-        {projectData.map((project, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
-            <Card 
-              sx={{ 
-                width: 345, // Set a fixed width
-                height: 450, // Set a fixed height to make all cards the same
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                margin: 'auto' // Center the card in the grid cell
-              }}
-            >
-              <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
+    <>
+      <Head>
+        <title>Mobile Development Projects</title>
+        <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" />
+      </Head>
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          fontFamily: 'Roboto, sans-serif',
+          padding: '100px',
+        }}
+      >
+        <NavBar />
+        <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+          {projectData.map((project, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+              <Card
+                sx={{
+                  width: 345,
+                  height: 480,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  margin: 'auto', // Center the card in the grid cell
+                }}
+              >
                 <CardMedia
                   component="img"
                   image={project.image}
@@ -113,12 +116,23 @@ const MobileDevelopmentPage = () => {
                     {project.description}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
+                  <IconButton aria-label="github" href={project.github} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
+                    <GitHubIcon sx={{ fontSize: '2rem' }} />
+                  </IconButton>
+                  <IconButton aria-label="download" href={project.apk} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
+                    <DownloadForOfflineIcon sx={{ fontSize: '2rem' }} />
+                  </IconButton>
+                  {/* Gallery Icon */}
+                  <IconButton aria-label="gallery" href={project.gallery} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
+                    <PhotoLibraryIcon sx={{ fontSize: '2rem' }} />
+                  </IconButton>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </>
   );
 };

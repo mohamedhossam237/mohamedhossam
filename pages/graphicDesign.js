@@ -13,15 +13,14 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const projectData = [
   {
     title: 'EduShare',
-    description: 'A web & mobile platform aimed at providing free, comprehensive educational support.',
     images: [
       { url: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],
   },
+  
   {
     title: 'QU Computing Club',
-    description: 'A digital design tool focused on user interface and user experience design.',
     images: [
       { url: 'https://i.ibb.co/CJnxDjz/ju-Nrc-Y4-N-400x400.jpg', description: 'EduShare Home Page' },
       // Add more images with descriptions here
@@ -29,15 +28,12 @@ const projectData = [
   },
   {
     title: 'QU College of Business & Economics',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
-    image: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg', // Replace this URL with the actual image URL
     images: [
       { url: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],  },
   {
     title: 'Fame Academy',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://static.wixstatic.com/media/74669e_1b782cb74fbf4cbc9392f81f8770c57c.png/v1/crop/x_0,y_0,w_989,h_610/fill/w_206,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/74669e_1b782cb74fbf4cbc9392f81f8770c57c.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
@@ -45,37 +41,30 @@ const projectData = [
   },
   {
     title: 'QU Astronomy Club',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
-    image: 'https://quastrocon.files.wordpress.com/2021/07/quac-1.png', // Replace this URL with the actual image URL
     images: [
       { url: 'https://quastrocon.files.wordpress.com/2021/07/quac-1.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],  },
   {
     title: 'I believe in Science',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://i.ibb.co/Dkrc4Wp/unnamed.jpg', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],  },
   {
     title: 'Oxgyen Technologies',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
-    image: 'https://i.ibb.co/0hc3S6K/oxygen-events-qatar-logo.jpg', // Replace this URL with the actual image URL
     images: [
       { url: 'https://i.ibb.co/0hc3S6K/oxygen-events-qatar-logo.jpg', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],   },
   {
     title: 'Otype Team',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://i.ibb.co/pr3FxNF/otype-final-logo.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],  },
   {
     title: 'QU Research Complex',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://i.ibb.co/KDNz2dj/download.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
@@ -83,14 +72,12 @@ const projectData = [
     },
   {
     title: 'QU Toastmasters Club',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png', description: 'EduShare Home Page' },
       // Add more images with descriptions here
     ],   },
   {
     title: 'The Bounce Back Better Program',
-    description: 'An innovative platform promoting sustainable technologies for a greener future.',
     images: [
       { url: 'https://www.eomega.org/sites/default/files/styles/scale_width_1440/public/media/bounce-back-better_hero.jpg?itok=aD5HQUHI', description: 'EduShare Home Page' },
       // Add more images with descriptions here
@@ -150,7 +137,7 @@ const GraphicDesignPage = () => {
     <Card 
       sx={{ 
         width: 345,
-        height: 450,
+        height: 250,
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'space-between', 

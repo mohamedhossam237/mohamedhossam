@@ -129,7 +129,7 @@ const projectData = [
                     />
                   )}
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
+                    <Typography gutterBottom variant="h6" component="div" sx={{ color: '#333' }}>
                       {project.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

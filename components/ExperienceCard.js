@@ -144,7 +144,7 @@ function ExperienceCard({ title, company, duration, location, skills, logo }) {
 export default function ExperienceList() {
   return (
     <Box sx={{ marginTop: '2rem', width: '100%' }}>
-      <Typography variant="h4"  sx={{ color: 'white' }} component="div" gutterBottom>
+      <Typography variant="h4"    sx={{color: 'white', fontFamily: 'Monoton, cursive' }} component="div" gutterBottom>
         Experience
       </Typography>
       <Slider {...sliderSettings}>

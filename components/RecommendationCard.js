@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, Grid } from '@mui/material';
+import { Card, CardContent, Typography, Box, useTheme, Grid } from '@mui/material';
+import { motion } from 'framer-motion';
 import StarIcon from '@mui/icons-material/Star';
 import Slider from 'react-slick';
 
@@ -55,24 +56,40 @@ const recommendations = [
   },
 ];
 
+
 function RecommendationCard({ recommendation }) {
+  const theme = useTheme();
+
   return (
-    <Card sx={{ maxWidth: 345, margin: '1rem', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', borderRadius: '8px', '&:hover': { boxShadow: '0 8px 16px rgba(0,0,0,0.2)' } }}>
-      <CardContent>
-        <Box display="flex" alignItems="center" marginBottom={2}>
-          <StarIcon sx={{ color: '#FFD700', marginRight: '8px' }} />
-          <Typography variant="h6" component="div" gutterBottom fontWeight="medium">
-            {recommendation.author}
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
+      <Card sx={{
+        maxWidth: 345,
+        m: '1rem',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        borderRadius: '10px',
+        '&:hover': { boxShadow: '0 8px 16px rgba(0,0,0,0.2)' },
+        background: 'linear-gradient(145deg, #ffffff, #f0f0f0)',
+
+      }}>
+        <CardContent>
+          <Box display="flex" alignItems="center" mb={2}>
+            <StarIcon sx={{ color: '#FFD700', mr: '8px' }} />
+            <Typography variant="h6" component="div" gutterBottom fontWeight="medium">
+              {recommendation.author}
+            </Typography>
+          </Box>
+          <Typography variant="subtitle2" component="div" marginBottom={2} fontStyle="italic">
+            {recommendation.enterprise}
           </Typography>
-        </Box>
-        <Typography variant="subtitle2" component="div" color="primary.main" marginBottom={2} fontStyle="italic">
-          {recommendation.enterprise}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" component="p" style={{ textAlign: 'justify' }}>
-          {recommendation.text}
-        </Typography>
-      </CardContent>
-    </Card>
+          <Typography variant="body2" component="p" sx={{ textAlign: 'justify', fontSize: '0.875rem' }}>
+            {recommendation.text}
+          </Typography>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }
 

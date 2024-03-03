@@ -5,8 +5,6 @@ import {
   Button,
   CssBaseline,
   Zoom,
-  Card,
-  CardContent,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -39,48 +37,6 @@ export default function Home() {
   }, []);
 
   const imageUrl = imageUrls[currentImageIndex];
-
-  const [currentRole, setCurrentRole] = useState(0);
-  const roles = ['Web Developer', 'Graphic Designer', 'Video Editor', 'Mobile Developer'];
-
-
-  const InfoCard = ({ icon, title, description }) => (
-    <Card sx={{ maxWidth: 345, margin: '1rem' }}>
-      <CardContent>
-        <Box display="flex" alignItems="center">
-          {icon}
-          <Typography variant="h5" sx={{ color: 'white' }} component="div" gutterBottom >
-            {title}
-          </Typography>
-        </Box>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-
-  const [anchorEl, setAnchorEl] = useState(null);
-  const pages = [
-    { name: 'Web Development', url: '/WebDevelopmentPage' },
-    { name: 'Graphic Design', url: '/graphicDesign' },
-    { name: 'Video Editing', url: '/videoEditing' },
-    { name: 'Mobile Development', url: '/mobileDevelopment' },
-    { name: 'Blogs', url: '/blogs' },
-    { name: 'Contact Me', url: '/contact' },
-  ];
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleMenuOpen = (event) => {
-    setMenuOpen(true);
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setMenuOpen(false);
-    setAnchorEl(null);
-  };
-
 
   return (
     <> <Head>

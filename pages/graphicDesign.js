@@ -14,72 +14,106 @@ const projectData = [
   {
     title: 'EduShare',
     images: [
-      { url: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png'},
+
+    ],
+  },
+  {
+    title: 'AdStep',
+    images: [
+      { url: 'https://i.ibb.co/kQ5yRnn/adstep-4.png' },
+      { url: 'https://i.ibb.co/Tg82byq/International-8.png' },
+      { url: 'https://i.ibb.co/nC3KnJR/International-10.png' },
+      { url: 'https://i.ibb.co/HDGyg4t/International-6.png' },
+      { url: 'https://i.ibb.co/z7NhzVX/Main.jpg' },
+      { url: 'https://i.ibb.co/rvZMF8N/Instagram-post-1-3.png' },
+
       // Add more images with descriptions here
     ],
   },
-  
   {
     title: 'QU Computing Club',
     images: [
-      { url: 'https://i.ibb.co/CJnxDjz/ju-Nrc-Y4-N-400x400.jpg', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/CJnxDjz/ju-Nrc-Y4-N-400x400.jpg' },
+      { url: 'https://i.ibb.co/JFBCVvc/Robo-Vision.png' },
+      { url: 'https://i.ibb.co/wcycTkR/FREE-Workdays.png' },
+
       // Add more images with descriptions here
     ],
   },
   {
     title: 'QU College of Business & Economics',
     images: [
-      { url: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg' },
+      { url: 'https://i.ibb.co/fDnQCwP/Announcement-temp-13.png' },
+      { url: 'https://i.ibb.co/3FBrC4N/GSSC.png' },
+      { url: 'https://i.ibb.co/19DnVKw/8B0952.png' },
+      { url: 'https://i.ibb.co/8NfnY4M/Beige-Monotone-Minimalist-Agenda-Document-5.png' },
+
+
+
       // Add more images with descriptions here
     ],  },
   {
-    title: 'Fame Academy',
-    images: [
-      { url: 'https://static.wixstatic.com/media/74669e_1b782cb74fbf4cbc9392f81f8770c57c.png/v1/crop/x_0,y_0,w_989,h_610/fill/w_206,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/74669e_1b782cb74fbf4cbc9392f81f8770c57c.png', description: 'EduShare Home Page' },
-      // Add more images with descriptions here
-    ],
-  },
-  {
     title: 'QU Astronomy Club',
     images: [
-      { url: 'https://quastrocon.files.wordpress.com/2021/07/quac-1.png', description: 'EduShare Home Page' },
+      { url: 'https://quastrocon.files.wordpress.com/2021/07/quac-1.png'},
       // Add more images with descriptions here
     ],  },
   {
     title: 'I believe in Science',
     images: [
-      { url: 'https://i.ibb.co/Dkrc4Wp/unnamed.jpg', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/Dkrc4Wp/unnamed.jpg'},
+      { url: 'https://i.ibb.co/GdjDBRj/image.png'},
+      { url: 'https://i.ibb.co/kmBBDrB/image.png'},
+      { url: 'https://i.ibb.co/3B31yyM/image.png'},
+      { url: 'https://i.ibb.co/WxF6WXc/image.png'},
+
+
       // Add more images with descriptions here
     ],  },
   {
     title: 'Oxgyen Technologies',
     images: [
-      { url: 'https://i.ibb.co/0hc3S6K/oxygen-events-qatar-logo.jpg', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/0hc3S6K/oxygen-events-qatar-logo.jpg' },
       // Add more images with descriptions here
     ],   },
   {
     title: 'Otype Team',
     images: [
-      { url: 'https://i.ibb.co/pr3FxNF/otype-final-logo.png', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/pr3FxNF/otype-final-logo.png' },
+      { url: 'https://i.ibb.co/3Wxff5J/3.png'},
+      { url: 'https://i.ibb.co/jkyTg4z/share-khair-343.png'},
+
+
       // Add more images with descriptions here
     ],  },
   {
     title: 'QU Research Complex',
     images: [
-      { url: 'https://i.ibb.co/KDNz2dj/download.png', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/KDNz2dj/download.png'},
+      { url: 'https://i.ibb.co/80F6fRR/a7.png'},
+      { url: 'https://i.ibb.co/cFk5HXh/insta5-post.jpg'},
+      { url: 'https://i.ibb.co/tCqF8ht/banner.png'},
+
       // Add more images with descriptions here
     ], 
     },
   {
     title: 'QU Toastmasters Club',
     images: [
-      { url: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png', description: 'EduShare Home Page' },
+      { url: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png'},
+      { url: 'https://i.ibb.co/hHBfFqn/58-tos.png'},
+      { url: 'https://i.ibb.co/VVtV5XD/tttos.png'},
+      { url: 'https://i.ibb.co/kxzdBHZ/11-Tos.png'},
+
+
       // Add more images with descriptions here
     ],   },
   {
     title: 'The Bounce Back Better Program',
     images: [
-      { url: 'https://www.eomega.org/sites/default/files/styles/scale_width_1440/public/media/bounce-back-better_hero.jpg?itok=aD5HQUHI', description: 'EduShare Home Page' },
+      { url: 'https://www.eomega.org/sites/default/files/styles/scale_width_1440/public/media/bounce-back-better_hero.jpg?itok=aD5HQUHI'},
       // Add more images with descriptions here
     ],   },];
 

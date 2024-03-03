@@ -30,68 +30,78 @@ const projectData = [
     image: 'https://www.uab.edu/news/images/2018/HIPK2.jpg', 
     link: 'https://colab.research.google.com/drive/1xXq5kYxjDsOojBZfRmzMSU3CCDhqqwOm?usp=sharing' 
   },
-];
-const machinelearningPage = () => {
-  return (
-    <> <Head>
-    <title>Machine Learning Projects</title>
-    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
-  </Head>
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      sx={{
-        minHeight: '100vh',
-        background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '100px',
-      }}
-    >
-      <NavBar />
-
-      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-        {projectData.map((project, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
-            <Card 
-              sx={{ 
-                width: 345, // Set a fixed width
-                height: 580, // Set a fixed height to make all cards the same
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                margin: 'auto' // Center the card in the grid cell
-              }}
-            >
-              <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
-                <CardMedia
-                  component="img"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ height: 194,objectFit: 'cover' }}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h6" component="div" sx={{ color: '#333' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+];const machinelearningPage = () => {
+    return (
+      <>
+        <Head>
+          <title>Machine Learning Projects</title>
+          <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" />
+        </Head>
+        <Box
+          component={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          sx={{
+            minHeight: '100vh',
+            background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            fontFamily: 'Roboto, sans-serif',
+            padding: '100px',
+          }}
+        >
+          <NavBar />
+  
+          <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+            {projectData.map((project, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card
+                    sx={{
+                      maxWidth: 345, // Use maxWidth for responsiveness
+                      height: '100%', // Adjust height for content
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      m: 2, // Adjust margin for spacing
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.2)', // Enhance shadow for depth
+                      '&:hover': {
+                        boxShadow: '0 16px 32px rgba(0,0,0,0.25)', // Enhance shadow on hover
+                      },
+                    }}
+                  >
+                    <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
+                      <CardMedia
+                        component="img"
+                        height="194"
+                        image={project.image}
+                        alt={project.title}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h6" component="div">
+                          {project.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {project.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-    </Box>
-    </>
-  );
-};
-
-export default machinelearningPage;
+        </Box>
+      </>
+    );
+  };
+  
+  export default machinelearningPage;

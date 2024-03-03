@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardMedia, CardActionArea } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, CardActionArea, styled } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -39,65 +39,97 @@ const projectData = [
 
   },
 ];
+const GradientCard = styled(Card)(({ theme }) => ({
+  background: 'linear-gradient(145deg, #6e48aa, #9d50bb)',
+  '&:hover': {
+    background: 'linear-gradient(145deg, #9d50bb, #6e48aa)',
+  },
+  transition: 'background 0.5s',
+  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+  borderRadius: '15px',
+  overflow: 'hidden',
+}));
+
+const cardHoverAnimation = {
+  whileHover: { scale: 1.05, transition: { duration: 0.2 } },
+  whileTap: { scale: 0.95 },
+};
+
+const CustomCard = styled(Card)(({ theme }) => ({
+  maxWidth: 345,
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  margin: 'auto',
+  transition: 'transform 0.15s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.03)',
+    boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1), 0px 4px 6px -2px rgba(0,0,0,0.05)',
+  },
+}));
+
+const cardVariants = {
+  initial: { opacity: 0, y: 20 },
+  enter: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.3, ease: 'easeIn' } },
+};
+
 const WebDevelopmentPage = () => {
   return (
-    <> <Head>
-    <title> Web Development Projects</title>
-    <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" /> {/* Replace "/favicon.ico" with the path to your logo image */}
-  </Head>
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      sx={{
-        minHeight: '100vh',
-        background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '100px',
-      }}
-    >
-      <NavBar />
+    <>
+      <Head>
+        <title>Web Development Projects</title>
+        <link rel="icon" href="https://i.ibb.co/gtXtT7v/My-logo-removebg-preview.png" />
+      </Head>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          fontFamily: 'Roboto, sans-serif',
+          padding: '100px',
+        }}
+      >
+        <NavBar />
 
-      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-        {projectData.map((project, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
-            <Card 
-              sx={{ 
-                width: 345, // Set a fixed width
-                height: 450, // Set a fixed height to make all cards the same
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between', 
-                margin: 'auto' // Center the card in the grid cell
-              }}
-            >
-              <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
-                <CardMedia
-                  component="img"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ height: 194, objectFit: 'cover' }}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+          {projectData.map((project, index) => (
+            <Grid item key={index} xs={12} sm={6} md={4}>
+              <motion.div
+                variants={cardVariants}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                layout
+              >
+                <CustomCard>
+                  <CardActionArea href={project.link} target="_blank" rel="noopener noreferrer">
+                    <CardMedia
+                      component="img"
+                      height="194"
+                      image={project.image}
+                      alt={project.title}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </CustomCard>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </>
   );
 };

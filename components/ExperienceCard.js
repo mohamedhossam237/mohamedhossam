@@ -1,6 +1,7 @@
-import { Box, Typography, Card, CardContent,Grid } from '@mui/material';
 import Slider from 'react-slick';
 import WorkIcon from '@mui/icons-material/Work';
+import { Box, Typography, Card, CardContent, CardMedia, Chip, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -44,7 +45,7 @@ const experiences = [
     company: 'QUCC',
     duration: 'May 2022 - Mar 2023 · 11 mos',
     location: 'Doha,Qatar',
-    Skills:
+    skills:
       'Machine Learning · Adobe Premiere Pro · Communication · Negotiation · Event Planning · Event Management · Adobe Photoshop · Python (Programming Language) · Web Development',
     logo: 'https://i.ibb.co/CJnxDjz/ju-Nrc-Y4-N-400x400.jpg',
   },
@@ -53,7 +54,7 @@ const experiences = [
     company: 'College of Business & Economics- Qatar University',
     duration: 'Sep 2022 - Feb 2023 · 6 mos',
     location: 'Doha,Qatar',
-    Skills: 
+    skills: 
         'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Microsoft Excel · Adobe Premiere Pro · Marketing Management · Adobe Photoshop · Python (Programming Language)',
     logo: 'https://i.ibb.co/M2j5982/QNA-Faculty-Economy-03-04-2023.jpg',
   },
@@ -85,7 +86,7 @@ const experiences = [
     company: 'QuToastmasters Club',
     duration: 'Nov 2019 - May 2021 · 1 yr 7 mos',
     location: 'Doha,Qatar', 
-    Skills: 'Marketing Management · Public Speaking · Public Relations · Project Management · Adobe Photoshop',
+    skills: 'Marketing Management · Public Speaking · Public Relations · Project Management · Adobe Photoshop',
     logo: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png',
   },
   {
@@ -104,43 +105,60 @@ const experiences = [
   },
 ];
 function ExperienceCard({ title, company, duration, location, skills, logo }) {
-  return (
-    <Card sx={{ maxWidth: 345, margin: '1rem', boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)', borderRadius: '10px', overflow: 'hidden' }}>
-      <CardContent sx={{ padding: '16px' }}>
-        {/* Logo and Title Section */}
-        <Box display="flex" alignItems="center" marginBottom={2}>
-          {/* Display logo if available, fallback to a generic icon */}
-          {logo ? (
-            <img src={logo} alt={`${company} logo`} style={{ width: 40, height: 40, borderRadius: '50%', marginRight: '8px' }} />
-          ) : (
-            <WorkIcon sx={{ marginRight: '8px', fontSize: '40px' }} />
-          )}
-          <Typography variant="h6" component="div" gutterBottom>
-            {title}
-          </Typography>
-        </Box>
+  const skillSet = skills ? skills.split(' · ') : [];
 
-        {/* Company, Duration, and Location Section */}
-        <Typography variant="subtitle1" color="text.primary" fontWeight="bold">
-          {company}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {duration}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" marginBottom={2}>
-          {location}
-        </Typography>
-        {/* Skills Section */}
-        {skills && (
-          <Typography variant="body2" color="text.secondary">
-            <b>Skills:</b> {skills}
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card sx={{
+        maxWidth: 345,
+        m: '1rem',
+        boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+        borderRadius: '10px',
+        overflow: 'hidden',
+        background: 'linear-gradient(145deg, #ffffff, #f0f0f0)',
+      }}>
+        <CardContent sx={{ p: '16px' }}>
+          <Box display="flex" alignItems="center" mb={2}>
+            <Box sx={{ p: '2px', background: 'linear-gradient(145deg, #e0e0e0, #ffffff)', borderRadius: '50%', display: 'flex' }}>
+              {logo ? (
+                <CardMedia
+                  component="img"
+                  image={logo}
+                  alt={`${company} logo`}
+                  sx={{ width: 40, height: 40, borderRadius: '50%' }}
+                />
+              ) : (
+                <WorkIcon sx={{ fontSize: '40px' }} />
+              )}
+            </Box>
+            <Typography variant="h6" gutterBottom sx={{ ml: '8px', fontWeight: 'bold' }}>
+              {title}
+            </Typography>
+          </Box>
+          <Typography variant="subtitle1" sx={{ color: 'text.primary', fontWeight: 'bold' }}>
+            {company}
           </Typography>
-        )}
-      </CardContent>
-    </Card>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            {duration}
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+            {location}
+          </Typography>
+          <Stack direction="row" flexWrap="wrap" gap={1}>
+            {skillSet.map((skill, index) => (
+              <Chip key={index} label={skill} variant="outlined" size="small" sx={{ mb: 1 }} />
+            ))}
+          </Stack>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }
-
 export default function ExperienceList() {
   return (
     <Box sx={{ marginTop: '2rem', width: '100%' }}>

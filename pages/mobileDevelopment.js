@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardMedia, IconButton } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, IconButton, styled } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'; // Icon for APK download
-import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary'; // Icon for gallery
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 const projectData = [
   {
@@ -63,6 +63,29 @@ const projectData = [
 
   },
 ];
+const CustomIconButton = styled(IconButton)(({ theme }) => ({
+  margin: theme.spacing(1),
+  '&:hover': {
+    transform: 'scale(1.2)',
+  },
+  transition: 'transform 0.2s ease-in-out',
+}));
+
+const cardVariants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 const MobileDevelopmentPage = () => {
   return (
@@ -91,44 +114,49 @@ const MobileDevelopmentPage = () => {
         <NavBar />
         <Grid container spacing={4} justifyContent="center" alignItems="stretch">
           {projectData.map((project, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
-              <Card
-                sx={{
-                  width: 345,
-                  height: 480,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  margin: 'auto', // Center the card in the grid cell
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ height: 194, objectFit: 'cover' }}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.description}
-                  </Typography>
-                </CardContent>
-                <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
-                  <IconButton aria-label="github" href={project.github} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
-                    <GitHubIcon sx={{ fontSize: '2rem' }} />
-                  </IconButton>
-                  <IconButton aria-label="download" href={project.apk} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
-                    <DownloadForOfflineIcon sx={{ fontSize: '2rem' }} />
-                  </IconButton>
-                  {/* Gallery Icon */}
-                  <IconButton aria-label="gallery" href={project.gallery} target="_blank" rel="noopener noreferrer" sx={{ fontSize: '2rem' }}>
-                    <PhotoLibraryIcon sx={{ fontSize: '2rem' }} />
-                  </IconButton>
-                </Box>
-              </Card>
+            <Grid item key={index} xs={12} sm={6} md={4}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Card
+                  sx={{
+                    width: '100%', // Responsive width
+                    height: 480,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    margin: 'auto',
+                    transition: 'box-shadow 0.3s ease-in-out',
+                    '&:hover': {
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.3)', // CSS-based hover effect for shadow
+                    },
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    image={project.image}
+                    alt={project.title}
+                    sx={{ height: 194, objectFit: 'cover' }}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={{ color: '#333' }}>
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.description}
+                    </Typography>
+                  </CardContent>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
+                    <IconButton aria-label="github" href={project.github} target="_blank" rel="noopener noreferrer">
+                      <GitHubIcon />
+                    </IconButton>
+                    <IconButton aria-label="download" href={project.apk} target="_blank" rel="noopener noreferrer">
+                      <DownloadForOfflineIcon />
+                    </IconButton>
+                    <IconButton aria-label="gallery" href={project.gallery} target="_blank" rel="noopener noreferrer">
+                      <PhotoLibraryIcon />
+                    </IconButton>
+                  </Box>
+                </Card>
+              </motion.div>
             </Grid>
           ))}
         </Grid>

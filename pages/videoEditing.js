@@ -6,7 +6,6 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 const projectData = [
   {
     title: 'EduShare',
@@ -65,7 +64,7 @@ const projectData = [
     
       const handleClickOpen = (project) => {
         setSelectedProject(project);
-        setActiveVideoIndex(0); 
+        setActiveVideoIndex(0);
         setOpen(true);
       };
     
@@ -107,41 +106,39 @@ const projectData = [
             <NavBar />
     
             <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-          {projectData.map((project, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
-              <Card 
-                sx={{ 
-                  width: 345,
-                  height: 250,
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  justifyContent: 'space-between', 
-                  margin: 'auto'
-                }}
-              >
-                <CardActionArea onClick={() => handleClickOpen(project)}>
-                  {project.image && (
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={project.image}
-                      alt={`${project.title} cover image`}
-                    />
-                  )}
-                  <CardContent>
-                    <Typography gutterBottom variant="h6" component="div" sx={{ color: '#333' }}>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              {projectData.map((project, index) => (
+                <Grid item key={index} xs={12} sm={6} md={4} display="flex" justifyContent="center">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                    <Card
+                      sx={{
+                        width: 345,
+                        height: 300, // Ensuring uniform size
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        margin: 'auto',
+                        overflow: 'hidden', // Prevents content from overflowing
+                      }}
+                    >
+                      <CardActionArea onClick={() => handleClickOpen(project)}>
+                        <CardMedia
+                          component="img"
+                          height="140"
+                          image={project.image}
+                          alt={project.title}
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h6">
+                            {project.title}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </motion.div>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-            
+    
             {/* Dialog for displaying project videos */}
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
               <DialogTitle>

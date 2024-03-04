@@ -37,7 +37,7 @@ const experiences = [
     duration: 'Sep 2022 - Present · 10 mos',
     location: 'Doha,Qatar',
     skills:
-      'React.js · Next.js · Three.js · Adobe Premiere Pro · Communication · Project Management · Adobe Photoshop · Web Design · Flutter · Dart · Mobile Application Development · Python (Programming Language) · JavaScript · Web Development',
+      'React.js · Next.js · Three.js · Adobe Premiere Pro · Communication · Project Management · Adobe Photoshop · Web Design · Flutter · Dart · Mobile Application Development · Python (Programming Language) · JavaScript · Web Development · Project Management',
     logo: 'https://i.ibb.co/kQ5yRnn/adstep-4.png',
   },
   {
@@ -61,6 +61,7 @@ const experiences = [
   {
     title: 'Campus Director',
     company: 'Millennium Campus Network (MCN)',
+    skills: 'Marketing Management · Project Management · Conceptual thinking · Event Management · Teamwork',
     duration: 'Aug 2022 - Dec 2022 · 5 mos',
     location: 'Doha, Qatar',
     logo: 'https://i.ibb.co/60vhVhp/Untitled-design.png',
@@ -71,6 +72,7 @@ const experiences = [
     company: 'Astrocon21',
     duration: 'Dec 2020 - Oct 2021 · 11 mos',
     location: 'Qatar',
+    skills: 'Marketing Management · Project Management · Marketing Strategy ·  Conceptual thinking · Event Management · Teamwork · Adaptability· Public Relations · Advertising ·  Problem Solving',
     logo: 'https://i.ibb.co/DkJnx48/download.jpg',
   },
 
@@ -79,6 +81,7 @@ const experiences = [
     company: 'QU Astronomy Club نادي الفلك',
     duration: 'Jun 2018 - Oct 2021 · 3 yrs 5 mos',
     location: 'Qatar University Astronomy Club',
+    skills: 'Marketing Management · Public Relations · Leadership · Project Management · Conceptual thinking · Event Management · Adaptability · Teamwork',
     logo: 'https://i.ibb.co/Q8bDmV6/7d4f9905-3ad6-4a58-a825-f6ad097683c3d012a528-ee66-4272-a1bf-161dc7b3db71.jpg',
   },
   {
@@ -86,7 +89,7 @@ const experiences = [
     company: 'QuToastmasters Club',
     duration: 'Nov 2019 - May 2021 · 1 yr 7 mos',
     location: 'Doha,Qatar', 
-    skills: 'Marketing Management · Public Speaking · Public Relations · Project Management · Adobe Photoshop',
+    skills: 'Marketing Management · Public Speaking · Public Relations · Leadership · Project Management · Adobe Photoshop · Conceptual thinking',
     logo: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png',
   },
   {
@@ -94,12 +97,16 @@ const experiences = [
     company: 'Qatar University',
     duration: 'Aug 2019 - Jan 2021 · 1 yr 6 mos',
     location: 'Qatar',
+    skills: 
+        'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Adobe Premiere Pro · Adobe Photoshop · Photography · Videography · Problem Solving ',
     logo: 'https://i.ibb.co/KDNz2dj/download.png',
   },
   {
     title: 'Graphic Designer',
     company: 'I Believe in Science - أنا أصدق العلم',
     duration: 'Dec 2018 - Jul 2020 · 1 yr 8 mos',
+    skills: 
+        'Advertising · Figma · Adobe Photoshop  · Videography · Documentation · Time management · Teamwork ',
     location: 'Qatar',
     logo: 'https://i.ibb.co/Dkrc4Wp/unnamed.jpg',
   },

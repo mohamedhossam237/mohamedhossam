@@ -32,9 +32,18 @@ const sliderSettings = {
 
 const experiences = [
   {
+    title: 'Software Engineer',
+    company: 'AppLab Qatar',
+    duration: 'March 2024 - Present',
+    location: 'Doha,Qatar',
+    skills:
+      'Microsoft Azure · Copilot Studio · Python · React  · JavaScript  · ChatBot Development',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNE0uTI12BDxkmp9XZoYxrk_g5pc7eofqUTy4fformAdTbK8Q4ppfBg0LEFrePLZu7RQY&usqp=CAU',
+  },
+  {
     title: 'Co-Founder & CEO',
     company: 'AdStep',
-    duration: 'Sep 2022 - Present · 10 mos',
+    duration: 'Sep 2022 - Present',
     location: 'Doha,Qatar',
     skills:
       'React.js · Next.js · Three.js · Adobe Premiere Pro · Communication · Project Management · Adobe Photoshop · Web Design · Flutter · Dart · Mobile Application Development · Python (Programming Language) · JavaScript · Web Development · Project Management',
@@ -43,7 +52,7 @@ const experiences = [
   {
     title: 'Event Coordinator',
     company: 'QUCC',
-    duration: 'May 2022 - Mar 2023 · 11 mos',
+    duration: 'May 2022 - Mar 2023',
     location: 'Doha,Qatar',
     skills:
       'Machine Learning · Adobe Premiere Pro · Communication · Negotiation · Event Planning · Event Management · Adobe Photoshop · Python (Programming Language) · Web Development',
@@ -52,7 +61,7 @@ const experiences = [
   {
     title: 'Media Marketing Specialist',
     company: 'College of Business & Economics- Qatar University',
-    duration: 'Sep 2022 - Feb 2023 · 6 mos',
+    duration: 'Sep 2022 - Feb 2023',
     location: 'Doha,Qatar',
     skills: 
         'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Microsoft Excel · Adobe Premiere Pro · Marketing Management · Adobe Photoshop · Python (Programming Language)',
@@ -62,7 +71,7 @@ const experiences = [
     title: 'Campus Director',
     company: 'Millennium Campus Network (MCN)',
     skills: 'Marketing Management · Project Management · Conceptual thinking · Event Management · Teamwork',
-    duration: 'Aug 2022 - Dec 2022 · 5 mos',
+    duration: 'Aug 2022 - Dec 2022',
     location: 'Doha, Qatar',
     logo: 'https://i.ibb.co/60vhVhp/Untitled-design.png',
 
@@ -70,7 +79,7 @@ const experiences = [
   {
     title: 'Astrocon21 Coordinator',
     company: 'Astrocon21',
-    duration: 'Dec 2020 - Oct 2021 · 11 mos',
+    duration: 'Dec 2020 - Oct 2021',
     location: 'Qatar',
     skills: 'Marketing Management · Project Management · Marketing Strategy ·  Conceptual thinking · Event Management · Teamwork · Adaptability· Public Relations · Advertising ·  Problem Solving',
     logo: 'https://i.ibb.co/DkJnx48/download.jpg',
@@ -79,7 +88,7 @@ const experiences = [
   {
     title: 'Administrator',
     company: 'QU Astronomy Club نادي الفلك',
-    duration: 'Jun 2018 - Oct 2021 · 3 yrs 5 mos',
+    duration: 'Jun 2018 - Oct 2021',
     location: 'Qatar University Astronomy Club',
     skills: 'Marketing Management · Public Relations · Leadership · Project Management · Conceptual thinking · Event Management · Adaptability · Teamwork',
     logo: 'https://i.ibb.co/Q8bDmV6/7d4f9905-3ad6-4a58-a825-f6ad097683c3d012a528-ee66-4272-a1bf-161dc7b3db71.jpg',
@@ -87,7 +96,7 @@ const experiences = [
   {
     title: 'VP of Marketing',
     company: 'QuToastmasters Club',
-    duration: 'Nov 2019 - May 2021 · 1 yr 7 mos',
+    duration: 'Nov 2019 - May 2021',
     location: 'Doha,Qatar', 
     skills: 'Marketing Management · Public Speaking · Public Relations · Leadership · Project Management · Adobe Photoshop · Conceptual thinking',
     logo: 'https://i.ibb.co/vQ4CPZJ/Toastmasters-2011.png',
@@ -95,7 +104,7 @@ const experiences = [
   {
     title: 'Public Relations Intern',
     company: 'Qatar University',
-    duration: 'Aug 2019 - Jan 2021 · 1 yr 6 mos',
+    duration: 'Aug 2019 - Jan 2021',
     location: 'Qatar',
     skills: 
         'Advertising · Video Production · Marketing Strategy · Social Media Marketing · Figma · Adobe Premiere Pro · Adobe Photoshop · Photography · Videography · Problem Solving ',
@@ -104,7 +113,7 @@ const experiences = [
   {
     title: 'Graphic Designer',
     company: 'I Believe in Science - أنا أصدق العلم',
-    duration: 'Dec 2018 - Jul 2020 · 1 yr 8 mos',
+    duration: 'Dec 2018 - Jul 2020',
     skills: 
         'Advertising · Figma · Adobe Photoshop  · Videography · Documentation · Time management · Teamwork ',
     location: 'Qatar',

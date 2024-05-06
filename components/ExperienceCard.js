@@ -37,7 +37,7 @@ const experiences = [
     duration: 'March 2024 - Present',
     location: 'Doha,Qatar',
     skills:
-      'Microsoft Azure · Copilot Studio · Python · React  · JavaScript  · ChatBot Development',
+      'Microsoft Azure · Copilot Studio · Python · React  · JavaScript  · ChatBot Development · Power Automate',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNE0uTI12BDxkmp9XZoYxrk_g5pc7eofqUTy4fformAdTbK8Q4ppfBg0LEFrePLZu7RQY&usqp=CAU',
   },
   {

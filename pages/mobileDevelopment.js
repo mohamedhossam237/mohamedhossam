@@ -9,58 +9,58 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 const projectData = [
   {
+    title: 'Basirah',
+    description: 'Basirah is a mobile app paired with a smart stick that detects obstacles for individuals with visual impairments. It integrates an AI voice assistant to provide real-time guidance and navigation instructions, enhancing independence and safety.',
+    image: 'https://i.ibb.co/C0pPsSp/DALL-E-2024-03-17-22-50-52-Design-a-compact-and-distinct-logo-icon-for-the-Basirah-app-embodying-the.webp',
+    github: '' 
+
+  },
+  {
+    title: 'qucgm',
+    description: 'Qucgm is a mobile app that pairs with a specialized hand band to detect diabetes. It connects users with their families and doctors, facilitating real-time health data sharing and personalized guidance for effective diabetes management.',
+    image: 'https://i.ibb.co/7nVFJyR/logo.webp',
+    github: '' 
+
+  },
+  {
+    title: 'IEpilepsy',
+    description: 'IEpilepsy is a mobile app that integrates with a specialized device to detect epilepsy seizures using machine learning. It provides real-time alerts, seizure tracking, and facilitates communication between users, caregivers, and healthcare providers. This innovative solution enhances safety and improves the quality of life for individuals living with epilepsy',
+    image: 'https://i.ibb.co/8bCtLc7/DALL-E-2023-11-21-17-37-50-An-abstract-brain-like-structure-composed-of-intertwined-wires-on-the-lef.png',
+    github: '' 
+
+  },
+  {
     title: 'Dlni',
     description: 'Dlni is a mobile companion for exploring the vibrant shopping scene of Qatar! This innovative app is designed to enhance your tourism experience by providing a comprehensive guide to the malls and stores. Discover the best shopping destinations, exclusive discounts, and enticing offers right at your fingertips.',
     image: 'https://i.ibb.co/V396Gc1/LogoD.png',
-    github: 'https://foodie-hub-ebon.vercel.app/' 
+    github: '' 
 
   },
   {
     title: 'Rayig',
     description: 'Raiyg is a cutting-edge smartwatch and phone application tailored to enhance the mental health support system for students in schools. This app stands out by offering a seamless and discreet method for students to monitor their mental health, understand their emotional well-being, and recognize patterns in their mood and stress levels.',
     image: 'https://i.ibb.co/KKwqSSW/Black-Yellow-Minimalist-Brain-Logo.png',
-    github: 'https://quastrocon.wordpress.com/' 
+    github: '' 
 
   },
   {
     title: 'EduShare',
     description: 'web & mobile platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
     image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', 
-    github: 'https://edu-share.vercel.app' 
+    github: '' 
   },
   {
     title: 'Masar',
     description: 'Masar is a cutting-edge application designed to revolutionize the way we monitor road conditions and interact with traffic authorities. it serves as a critical bridge between the community and traffic police, enabling users to report road emergencies, accidents, and hazardous conditions in real-time.',
     image: 'https://i.ibb.co/TY6BDTB/Masar.png',
-    github: 'https://masar.vercel.app/' 
+    github: '' 
 
   },
   {
     title: 'Monqz',
     description: 'Monqz is an app designed for swimmers and sailors, offering real-time sea conditions, weather forecasts, and safety information. It highlights swimmable areas and warns of potential dangers, making it essential for safe and informed marine activities.',
     image: 'https://i.ibb.co/dryWTdp/logo-1.png',
-    github: 'https://monqz-api.vercel.app/' 
-  },
-  {
-    title: 'Busalert',
-    description: 'BusAlert enhances school bus safety by using facial recognition and machine learning to monitor student entry and exit. It provides real-time tracking for parents and schools, ensuring a secure and efficient commute. ',
-    image: 'https://i.ibb.co/9ZH2jwj/Untitled-design-13.png',
-    github: 'https://quastrocon.wordpress.com/' 
-
-  },
-  {
-    title: 'Organizer',
-    description: 'Organizer is an app that smoothens school dismissals by alerting parents via a smartwatch and mobile app when their child leaves school. This system aims to reduce congestion by timing parent arrivals, ensuring a safer and more efficient pick-up process.',
-    image: 'https://i.ibb.co/gvNnFdD/Untitled-design-14.png',
-    github: 'https://quastrocon.wordpress.com/' 
-
-  },
-  {
-    title: 'Eye Manager',
-    description: 'Eye Manager combines smart glasses with a phone app to monitor eye health, offering real-time insights and advice to prevent dryness and strain. It provides guidance, exercises, and access to eye care services, making it a comprehensive tool for maintaining ocular wellness. ',
-    image: 'https://i.ibb.co/RHsLg5k/Untitled-design-15.png',
-    github: 'https://quastrocon.wordpress.com/' 
-
+    github: '' 
   },
 ];
 const CustomIconButton = styled(IconButton)(({ theme }) => ({

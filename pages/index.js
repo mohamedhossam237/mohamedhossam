@@ -22,7 +22,7 @@ import RecommendationsList from '../components/RecommendationCard'
 
 export default function Home() {
   const linkedInURL = 'https://www.linkedin.com/in/mohamed-hossam-427b63187/';
-  const githubURL = 'https://github.com/mohamed-ma1703976';
+  const githubURL = 'https://github.com/mohamedhossam237';
   const instagramURL = 'https://www.instagram.com/mhos237';
 
   const imageUrls = ['https://i.ibb.co/Gpds9NL/Whats-App-Image-2023-06-12-at-7-28-29-PM-removebg-preview.png'];

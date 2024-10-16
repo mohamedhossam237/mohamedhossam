@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardMedia, IconButton, styled } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia, IconButton, Chip, Stack } from '@mui/material';
 import NavBar from '../components/NavBar';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -12,80 +12,75 @@ const projectData = [
     title: 'Basirah',
     description: 'Basirah is a mobile app paired with a smart stick that detects obstacles for individuals with visual impairments. It integrates an AI voice assistant to provide real-time guidance and navigation instructions, enhancing independence and safety.',
     image: 'https://i.ibb.co/C0pPsSp/DALL-E-2024-03-17-22-50-52-Design-a-compact-and-distinct-logo-icon-for-the-Basirah-app-embodying-the.webp',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'AI Voice Assistant · Smart Stick · Machine Learning · Real-time Guidance · Navigation',
   },
   {
     title: 'qucgm',
     description: 'Qucgm is a mobile app that pairs with a specialized hand band to detect diabetes. It connects users with their families and doctors, facilitating real-time health data sharing and personalized guidance for effective diabetes management.',
     image: 'https://i.ibb.co/7nVFJyR/logo.webp',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Diabetes Detection · Health Data Sharing · Personalized Guidance · Machine Learning',
   },
   {
     title: 'IEpilepsy',
-    description: 'IEpilepsy is a mobile app that integrates with a specialized device to detect epilepsy seizures using machine learning. It provides real-time alerts, seizure tracking, and facilitates communication between users, caregivers, and healthcare providers. This innovative solution enhances safety and improves the quality of life for individuals living with epilepsy',
+    description: 'IEpilepsy is a mobile app that integrates with a specialized device to detect epilepsy seizures using machine learning. It provides real-time alerts, seizure tracking, and facilitates communication between users, caregivers, and healthcare providers.',
     image: 'https://i.ibb.co/8bCtLc7/DALL-E-2023-11-21-17-37-50-An-abstract-brain-like-structure-composed-of-intertwined-wires-on-the-lef.png',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Epilepsy Detection · Seizure Tracking · Real-time Alerts · Machine Learning',
   },
   {
     title: 'Dlni',
-    description: 'Dlni is a mobile companion for exploring the vibrant shopping scene of Qatar! This innovative app is designed to enhance your tourism experience by providing a comprehensive guide to the malls and stores. Discover the best shopping destinations, exclusive discounts, and enticing offers right at your fingertips.',
+    description: 'Dlni is a mobile companion for exploring the vibrant shopping scene of Qatar! This innovative app provides a comprehensive guide to malls and stores, exclusive discounts, and enticing offers.',
     image: 'https://i.ibb.co/V396Gc1/LogoD.png',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Tourism · Shopping Guide · Exclusive Discounts · Offers · User Experience',
   },
   {
     title: 'Rayig',
-    description: 'Raiyg is a cutting-edge smartwatch and phone application tailored to enhance the mental health support system for students in schools. This app stands out by offering a seamless and discreet method for students to monitor their mental health, understand their emotional well-being, and recognize patterns in their mood and stress levels.',
+    description: 'Raiyg is a cutting-edge smartwatch and phone application tailored to enhance the mental health support system for students in schools. It offers a discreet method for students to monitor their mental health and recognize patterns in their mood and stress levels.',
     image: 'https://i.ibb.co/KKwqSSW/Black-Yellow-Minimalist-Brain-Logo.png',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Mental Health Monitoring · Smartwatch Integration · Mood Tracking · Student Support',
   },
   {
     title: 'EduShare',
-    description: 'web & mobile platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
-    image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png', 
-    github: '' 
+    description: 'EduShare is a web & mobile platform providing free educational support to address inequality. It promotes educational equality with features like curated online courses, personalized chats, and interactive events.',
+    image: 'https://i.ibb.co/T0JdkvK/Edu-Share-Logo.png',
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Educational Support · Online Courses · Personalized Chats · Interactive Events',
   },
   {
     title: 'Masar',
-    description: 'Masar is a cutting-edge application designed to revolutionize the way we monitor road conditions and interact with traffic authorities. it serves as a critical bridge between the community and traffic police, enabling users to report road emergencies, accidents, and hazardous conditions in real-time.',
+    description: 'Masar is an application designed to revolutionize the way we monitor road conditions and interact with traffic authorities. It allows users to report road emergencies, accidents, and hazardous conditions in real-time.',
     image: 'https://i.ibb.co/TY6BDTB/Masar.png',
-    github: '' 
-
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Road Condition Monitoring · Real-time Reporting · Traffic Authority Interaction',
   },
   {
     title: 'Monqz',
-    description: 'Monqz is an app designed for swimmers and sailors, offering real-time sea conditions, weather forecasts, and safety information. It highlights swimmable areas and warns of potential dangers, making it essential for safe and informed marine activities.',
+    description: 'Monqz is an app designed for swimmers and sailors, offering real-time sea conditions, weather forecasts, and safety information. It highlights swimmable areas and warns of potential dangers.',
     image: 'https://i.ibb.co/dryWTdp/logo-1.png',
-    github: '' 
+    github: '',
+    apk: '',
+    gallery: '',
+    skills: 'Sea Conditions · Weather Forecasts · Safety Information · Marine Activities',
   },
 ];
-const CustomIconButton = styled(IconButton)(({ theme }) => ({
-  margin: theme.spacing(1),
-  '&:hover': {
-    transform: 'scale(1.2)',
-  },
-  transition: 'transform 0.2s ease-in-out',
-}));
-
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
 
 const MobileDevelopmentPage = () => {
   return (
@@ -118,7 +113,7 @@ const MobileDevelopmentPage = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Card
                   sx={{
-                    width: '100%', // Responsive width
+                    width: '100%',
                     height: 480,
                     display: 'flex',
                     flexDirection: 'column',
@@ -126,7 +121,7 @@ const MobileDevelopmentPage = () => {
                     margin: 'auto',
                     transition: 'box-shadow 0.3s ease-in-out',
                     '&:hover': {
-                      boxShadow: '0 8px 16px rgba(0,0,0,0.3)', // CSS-based hover effect for shadow
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
                     },
                   }}
                 >
@@ -143,6 +138,11 @@ const MobileDevelopmentPage = () => {
                     <Typography variant="body2" color="text.secondary">
                       {project.description}
                     </Typography>
+                    <Stack direction="row" flexWrap="wrap" gap={1} mt={2}>
+                      {project.skills && project.skills.split(' · ').map((skill, index) => (
+                        <Chip key={index} label={skill} variant="outlined" size="small" />
+                      ))}
+                    </Stack>
                   </CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
                     <IconButton aria-label="github" href={project.github} target="_blank" rel="noopener noreferrer">

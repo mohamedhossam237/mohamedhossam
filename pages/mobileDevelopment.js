@@ -144,17 +144,6 @@ const MobileDevelopmentPage = () => {
                       {project.description}
                     </Typography>
                   </CardContent>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px' }}>
-                    <IconButton aria-label="github" href={project.github} target="_blank" rel="noopener noreferrer">
-                      <GitHubIcon />
-                    </IconButton>
-                    <IconButton aria-label="download" href={project.apk} target="_blank" rel="noopener noreferrer">
-                      <DownloadForOfflineIcon />
-                    </IconButton>
-                    <IconButton aria-label="gallery" href={project.gallery} target="_blank" rel="noopener noreferrer">
-                      <PhotoLibraryIcon />
-                    </IconButton>
-                  </Box>
                 </Card>
               </motion.div>
             </Grid>

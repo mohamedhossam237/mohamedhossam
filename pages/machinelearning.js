@@ -6,9 +6,9 @@ import Head from 'next/head';
 
 const projectData = [
   {
-    title: 'Bothina',
+    title: 'Maktabi Botaina',
     description: 'Maktabi Botaina is an AI-powered chatbot designed to enhance internal communications within Qatar Foundation. Developed using OpenAI models and Microsoft Azure services, the chatbot leverages Python APIs to facilitate seamless interactions. The integration of Copilot Studio enables AI-driven code suggestions, significantly improving development efficiency. Additionally, Azure Functions and SQL Database are utilized for cloud deployment and performance optimization, ensuring a robust and responsive user experience.',
-    image: 'https://www.qf.org.qa/botaina.gif', 
+    image: 'https://i.ibb.co/0QW9pV4/Screenshot-2024-10-31-134258.png', 
     link: 'https://www.qf.org.qa/',
     skills: 'Python · OpenAI · Microsoft Azure · SQL · API Design · Chatbot Development',
   },

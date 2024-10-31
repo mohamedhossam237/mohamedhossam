@@ -81,17 +81,15 @@ export default function Home() {
       description: 'London App Brewery - Issued Apr 2021',
       image: 'https://yt3.googleusercontent.com/ytc/AIdro_kRcKOU4apMYom4t7jG-mr15F2pKD_eAfStKx_h49pVyg=s900-c-k-c0x00ffffff-no-rj', // Replace with actual image URL
     },
-
   ];
 
+  // Settings for the carousel
   const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <ArrowForwardIos style={{ color: '#fff', fontSize: '2rem' }} />,
-    prevArrow: <ArrowBackIos style={{ color: '#fff', fontSize: '2rem' }} />,
     responsive: [
       {
         breakpoint: 1024,
@@ -111,7 +109,7 @@ export default function Home() {
       },
     ],
   };
-  
+
   return (
     <>
       <Head>
@@ -309,56 +307,49 @@ export default function Home() {
         <RecommendationsList />
 
         {/* Carousel for Courses and Certificates at the end of the page */}
-        <Box sx={{ width: '100%', padding: '2rem', marginTop: '5rem', position: 'relative' }}>
-    <Typography variant="h4" sx={{ color: 'white', marginBottom: '2rem', textAlign: 'center' }}>
-      Courses & Certificates
-    </Typography>
-    <Slider {...carouselSettings}>
-      {coursesAndCertificates.map((item, index) => (
-        <Box key={index} sx={{ padding: '1rem' }}>
-          <Box
-            sx={{
-              background: 'linear-gradient(135deg, #ffffff 30%, #e0e0e0 100%)',
-              borderRadius: '12px',
-              padding: '1.5rem',
-              boxShadow: '0 8px 20px rgba(0,0,0,0.3)',
-              textAlign: 'center',
-              transition: 'transform 0.3s, box-shadow 0.3s',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              height: '300px',
-              '&:hover': {
-                transform: 'scale(1.05)',
-                boxShadow: '0 12px 30px rgba(0,0,0,0.4)',
-              },
+        <Box sx={{ width: '100%', padding: '2rem', marginTop: '5rem' }}>
+  <Typography variant="h4" sx={{ color: 'white', marginBottom: '2rem', textAlign: 'center' }}>
+    Courses & Certificates
+  </Typography>
+  <Slider {...carouselSettings}>
+    {coursesAndCertificates.map((item, index) => (
+      <Box key={index} sx={{ padding: '1rem' }}>
+        <Box
+          sx={{
+            background: 'white',
+            borderRadius: '12px',
+            padding: '1rem',
+            boxShadow: '0 6px 16px rgba(0,0,0,0.2)',
+            textAlign: 'center',
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'translateY(-5px)',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+            },
+          }}
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            style={{
+              borderRadius: '8px',
+              maxWidth: '100%',
+              height: '150px', // Set a consistent height
+              objectFit: 'cover', // Ensure images cover the card area properly
+              marginBottom: '1rem',
             }}
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              style={{
-                borderRadius: '8px',
-                width: '100%',
-                maxHeight: '120px',
-                objectFit: 'cover',
-                marginBottom: '1rem',
-                transition: 'opacity 0.3s',
-              }}
-            />
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#333', marginBottom: '0.5rem' }}>
-              {item.title}
-            </Typography>
-            <Typography variant="body2" sx={{ color: '#666' }}>
-              {item.description}
-            </Typography>
-          </Box>
+          />
+          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#333', marginBottom: '0.5rem' }}>
+            {item.title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: '#666', marginBottom: '1rem' }}>
+            {item.description}
+          </Typography>
         </Box>
-      ))}
-    </Slider>
-  </Box>
-
+      </Box>
+    ))}
+  </Slider>
+</Box>
 
         <Box sx={{ marginTop: 'auto', padding: '1rem', backgroundColor: '#00000050', textAlign: 'center' }}>
           <Typography variant="body2" sx={{ color: 'white' }}>

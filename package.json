@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@google/generative-ai": "^0.21.0",
@@ -31,5 +30,4 @@
     "styled-components": "^6.1.8",
     "use-spring": "^0.2.4"
   }
-  
 }

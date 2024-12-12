@@ -8,9 +8,6 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import ExperienceList from '../components/ExperienceCard';
 import RecommendationsList from '../components/RecommendationCard';
 import React, { useState, useEffect } from 'react';
@@ -20,14 +17,32 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import NavBar from '../components/NavBar';
-
+import ChatbotDialog from '@/components/ChatbotDialogue';
 export default function Home() {
   const linkedInURL = 'https://www.linkedin.com/in/mohamed-hossam-427b63187/';
   const githubURL = 'https://github.com/mohamedhossam237';
   const instagramURL = 'https://www.instagram.com/mhos237';
+  const chatbotButtonAnimation = {
+    animate: {
+      y: [0, -10, 0],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   const imageUrls = ['https://i.ibb.co/Gpds9NL/Whats-App-Image-2023-06-12-at-7-28-29-PM-removebg-preview.png'];
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
+  const handleOpenChatbot = () => {
+    setIsChatbotOpen(true);
+  };
+
+  const handleCloseChatbot = () => {
+    setIsChatbotOpen(false);
+  };
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -38,6 +53,18 @@ export default function Home() {
   }, []);
 
   const imageUrl = imageUrls[currentImageIndex];
+
+  // Animation for the circular border
+  const borderAnimation = {
+    animate: {
+      rotate: 100,
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: 'linear',
+      },
+    },
+  };
 
   // Courses and certificates data
   const coursesAndCertificates = [
@@ -123,7 +150,7 @@ export default function Home() {
         transition={{ duration: 1 }}
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(45deg, #000428 30%, #204377 90%)', // Retained background color
+          background: 'linear-gradient(45deg, #000428 30%, #204377 90%)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -134,79 +161,38 @@ export default function Home() {
         }}
       >
         <CssBaseline />
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 100,
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-              },
-              shape: {
-                type: 'star',
-                stroke: {
-                  width: 1,
-                  color: '#ffffff',
-                },
-              },
-              size: {
-                value: 3,
-                random: true,
-                anim: {
-                  enable: true,
-                  speed: 5,
-                  size_min: 0.1,
-                  sync: false,
-                },
-              },
-              opacity: {
-                value: 0.5,
-                random: true,
-                anim: {
-                  enable: true,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              move: {
-                enable: true,
-                speed: 1,
-                direction: 'top',
-                random: true,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-              },
-            },
-          }}
-          sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: -1,
-          }}
-        />
         <NavBar />
         <Grid container spacing={4} sx={{ padding: '2rem', marginTop: '5rem' }}>
-          <Grid item xs={12} sm={6}>
-            <Zoom in={true} style={{ transitionDelay: '500ms' }}>
-              <img
-                src={imageUrl}
-                alt="Mohamed Hossam"
-                style={{
-                  borderRadius: '15%',
-                  maxWidth: '100%',
-                  height: 'auto',
-                  boxShadow: '0px 10px 30px 0px rgba(0, 0, 0, 0.1)',
-                  border: '8px solid white',
-                }}
-              />
-            </Zoom>
+          <Grid item xs={12} sm={6} sx={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            {/* Animated Circular Border */}
+            <Box
+              component={motion.div}
+              {...borderAnimation}
+              sx={{
+                width: '600px',
+                height: '600px',
+                borderRadius: '50%',
+                border: '4px dashed white',
+                position: 'absolute',
+                zIndex: 1,
+              }}
+            />
+            {/* Profile Image */}
+            <motion.img
+              src={imageUrl}
+              alt="Mohamed Hossam"
+              style={{
+                borderRadius: '50%',
+                width: '400px',
+                height: '400px',
+                objectFit: 'cover',
+                position: 'relative',
+                zIndex: 2,
+              }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box
@@ -216,28 +202,6 @@ export default function Home() {
               alignItems="center"
               height="100%"
             >
-              <Box
-                component={motion.div}
-                initial={{ scale: 0 }}
-                animate={{ rotate: 360, scale: 1 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 260,
-                  damping: 20,
-                }}
-              >
-                <Box display="flex" justifyContent="center">
-                  <Link href={linkedInURL} target="_blank" rel="noreferrer">
-                    <LinkedInIcon sx={{ fontSize: 40, color: '#fff', '&:hover': { color: '#0077b5' } }} />
-                  </Link>
-                  <Link href={githubURL} target="_blank" rel="noreferrer">
-                    <GitHubIcon sx={{ fontSize: 40, color: '#fff', marginLeft: '1rem', '&:hover': { color: '#333' } }} />
-                  </Link>
-                  <Link href={instagramURL} target="_blank" rel="noreferrer">
-                    <InstagramIcon sx={{ fontSize: 40, color: '#fff', marginLeft: '1rem', '&:hover': { color: '#E1306C' } }} />
-                  </Link>
-                </Box>
-              </Box>
               <Typography
                 variant="h2"
                 component={motion.div}
@@ -262,12 +226,12 @@ export default function Home() {
               </Typography>
               <Typography
                 variant="body1"
-                component={motion.div}
-                sx={{ color: 'white', fontFamily: 'Monoton, cursive', textAlign: 'center', padding: '0 2rem' }}
+                sx={{
+                  color: 'white',
+                  textAlign: 'center',
+                  padding: '0 2rem',
+                }}
                 gutterBottom
-                initial={{ y: '100%', opacity: 0 }}
-                animate={{ y: '0%', opacity: 1 }}
-                transition={{ duration: 1.5 }}
               >
                 As a technologist with a broad skill set, I excel in programming, data engineering, and design. My passion for innovation and making a meaningful impact drives me to solve complex challenges with creative and effective solutions.
               </Typography>
@@ -278,7 +242,7 @@ export default function Home() {
               >
                 <Button
                   component="a"
-                  href="https://drive.google.com/file/d/1_58__XF8TlfwHkOIyP772_3F6P7oXBna/view?usp=sharing"
+                  href="https://media.licdn.com/dms/document/media/v2/D4D2DAQEGfI59CnyVUg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1726483862871?e=1735171200&v=beta&t=xRjthBlNIAI0sDTM4IYjyVUfSsE1VhFRwI7yw41jlMY"
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="contained"
@@ -301,7 +265,6 @@ export default function Home() {
             </Box>
           </Grid>
         </Grid>
-
         {/* Other sections */}
         <ExperienceList />
         <RecommendationsList />
@@ -350,7 +313,74 @@ export default function Home() {
     ))}
   </Slider>
 </Box>
-
+<Box
+        sx={{
+          position: 'fixed',
+          bottom: '2rem',
+          right: '2rem',
+          zIndex: 1000,
+        }}
+      >
+        <motion.div {...chatbotButtonAnimation}>
+          <Button
+            onClick={handleOpenChatbot}
+            sx={{
+              padding: '0',
+              background: 'transparent',
+              border: 'none',
+              boxShadow: 'none',
+              '&:hover': {
+                background: 'none',
+              },
+            }}
+          >
+            <motion.img
+              src="https://i.ibb.co/9TjTZwd/image-removebg-preview.png" // Replace with the animated chatbot icon/image URL
+              alt="AI Chatbot Assistant"
+              style={{ width: '150px', height: '150px', cursor: 'pointer' }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            />
+          </Button>
+        </motion.div>
+        
+        {/* Thinking bubble */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: '140px',
+            right: '10px',
+            background: 'white',
+            borderRadius: '16px',
+            padding: '10px 15px',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+            width: '250px',
+            fontSize: '14px',
+            color: '#333',
+            fontFamily: 'Arial, sans-serif',
+            textAlign: 'center',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              right: '20px',
+              width: '0',
+              height: '0',
+              borderLeft: '10px solid transparent',
+              borderRight: '10px solid transparent',
+              borderTop: '10px solid white',
+            },
+          }}
+        >
+          Hello! Let&apos;s ask me anything about Mohamed Hossam
+        </Box>
+              {/* Chatbot Dialogue */}
+        {/* Chatbot Dialog */}
+        {isChatbotOpen && (
+          <ChatbotDialog onClose={handleCloseChatbot} />
+        )}
+      </Box>
+      
         <Box sx={{ marginTop: 'auto', padding: '1rem', backgroundColor: '#00000050', textAlign: 'center' }}>
           <Typography variant="body2" sx={{ color: 'white' }}>
             © 2023 - Mohamed Hossam - All Rights Reserved

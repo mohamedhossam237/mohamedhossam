@@ -9,6 +9,13 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 const projectData = [
   {
+    title: 'Robo',
+    description: 'Robo Mobile App, built with Flutter, streamlines factory and lab maintenance by controlling a cleaning and monitoring robot. It features real-time climate data, robot navigation, alerts, and historical tracking, all integrated with Firebase for seamless cross-platform performance and reliable data updates.',
+    image: 'https://i.ibb.co/VTgSZXZ/logo.png',
+    github: '' 
+
+  },
+  {
     title: 'Basirah',
     description: 'Basirah is a mobile app paired with a smart stick that detects obstacles for individuals with visual impairments. It integrates an AI voice assistant to provide real-time guidance and navigation instructions, enhancing independence and safety.',
     image: 'https://i.ibb.co/C0pPsSp/DALL-E-2024-03-17-22-50-52-Design-a-compact-and-distinct-logo-icon-for-the-Basirah-app-embodying-the.webp',

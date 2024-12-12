@@ -5,6 +5,13 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 const projectData = [
+
+  {
+    title: 'Naseh',
+    description: 'Naseh, is a platform uniting Qatar lawyers under one umbrella, providing easy access to legal advice with a single button press. It addresses the Qatari community lack of legal awareness by breaking barriers to connect users with legal experts through an innovative solution born from an early prototype.',
+    image: 'https://naseh.qa/assets/naseh-logo.CpTfn_N7.svg', 
+    link: 'https://naseh.vercel.app/' 
+  },
   {
     title: 'EduShare',
     description: 'A web & mobile platform aimed at providing free, comprehensive educational support to address educational inequality. By leveraging the internet, EduShare reaches audiences in remote or challenging circumstances, promoting educational equality with features like curated online courses, personalized instructor chats, informative blogs, and interactive events.',
